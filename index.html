@@ -3,95 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Avena Reddy S | AI/ML Portfolio</title>
+    <title>Sai Avena Reddy S | AI Architect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
-        body { font-family: 'Space Grotesk', sans-serif; background-color: #0a0a0c; color: #e2e8f0; overflow-x: hidden; }
-        .mandala-bg { position: absolute; top: -10%; right: -10%; width: 600px; height: 600px; background-image: url('https://www.transparentpng.com/download/mandala/gold-mandala-png-transparent-images--8.png'); background-size: contain; opacity: 0.05; z-index: -1; animation: rotate 100s linear infinite; }
-        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .wave-container { position: absolute; bottom: 0; width: 100%; height: 15vh; overflow: hidden; z-index: -1; }
-        .wave { background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg') repeat-x; position: absolute; bottom: 0; width: 6400px; height: 100%; animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite; transform: translate3d(0, 0, 0); opacity: 0.1; }
-        @keyframes wave { 0% { margin-left: 0; } 100% { margin-left: -1600px; } }
-        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; }
-        .glass-card:hover { border-color: #f59e0b; background: rgba(255, 255, 255, 0.07); }
-        .text-gradient { background: linear-gradient(to right, #f59e0b, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&family=Space+Grotesk:wght@500;700&display=swap');
+        
+        :root {
+            --accent: #FF4D4D; /* Inspired by the red in your reference image */
+            --bg: #050505;
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--bg); 
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .font-heading { font-family: 'Space Grotesk', sans-serif; }
+
+        .text-accent { color: var(--accent); }
+        .bg-accent { background-color: var(--accent); }
+        
+        /* Layout inspired by "Inaya" reference */
+        .hero-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-split { grid-template-columns: 1fr; padding-top: 100px; }
+        }
+
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent);
+            background: rgba(255, 77, 77, 0.1);
+        }
+
+        .project-card {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.4s;
+        }
+
+        .project-card:hover {
+            padding-left: 20px;
+            border-bottom-color: var(--accent);
+        }
     </style>
 </head>
 <body>
-    <div class="mandala-bg"></div>
-    <nav class="fixed w-full z-50 px-6 py-6 flex justify-between items-center bg-[#0a0a0c]/80 backdrop-blur-md">
-        <span class="font-bold text-xl tracking-widest text-gradient">SAI AVENA REDDY S</span>
-        <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest">
-            <a href="#about" class="hover:text-orange-400 transition">Evolution</a>
-            <a href="#projects" class="hover:text-orange-400 transition">Neural Works</a>
-            <a href="#contact" class="px-4 py-2 border border-orange-500 text-orange-500 rounded hover:bg-orange-500 hover:text-black transition">Connect</a>
+
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center glass-nav">
+        <span class="font-heading font-bold text-xl tracking-tighter">SAI AVENA.</span>
+        <div class="hidden md:flex space-x-10 text-xs uppercase tracking-widest font-medium">
+            <a href="#work" class="hover:text-accent transition">Experience</a>
+            <a href="#projects" class="hover:text-accent transition">Projects</a>
+            <a href="mailto:your-email@example.com" class="text-accent border-b border-accent pb-1">Let's Chat</a>
         </div>
     </nav>
-    <section class="h-screen flex items-center justify-center px-6 relative">
-        <div class="text-center">
-            <h1 class="text-6xl md:text-8xl font-bold mb-4 tracking-tighter">AI ARCHITECT</h1>
-            <p class="text-orange-500 tracking-[0.5em] font-light text-sm mb-8 uppercase">Blending Intelligence with Culture</p>
-            <p class="max-w-xl mx-auto text-gray-400 text-lg leading-relaxed mb-10">Building the future of recommendation systems and graph neural networks.</p>
-            <div class="wave-container"><div class="wave"></div></div>
-        </div>
-    </section>
-    <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
-        <h2 class="text-sm tracking-[0.3em] text-orange-500 uppercase mb-12">Professional Journey</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="glass-card p-8 rounded-2xl">
-                <span class="text-xs text-gray-500">ASUITECH</span>
-                <h3 class="text-xl font-bold mt-2 mb-4">ML Software Engineer</h3>
-                <p class="text-gray-400 text-sm italic">"30% Inference Speedup"</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl border-orange-500/30">
-                <span class="text-xs text-gray-500">MEDIATECH</span>
-                <h3 class="text-xl font-bold mt-2 mb-4">AI Data Scientist</h3>
-                <p class="text-gray-400 text-sm italic">"28% Engagement Lift"</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl">
-                <span class="text-xs text-gray-500">MEDIATECH</span>
-                <h3 class="text-xl font-bold mt-2 mb-4">ML Data Engineer</h3>
-                <p class="text-gray-400 text-sm italic">"40% Prep Reduction"</p>
+
+    <section class="hero-split px-8 md:px-20">
+        <div class="z-10">
+            <h2 class="text-xl md:text-2xl mb-4 font-light">Hi,</h2>
+            <h1 class="text-6xl md:text-8xl font-heading font-bold leading-none mb-6">
+                I'm <span class="text-accent">Sai Avena</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-md mb-8 leading-relaxed">
+                AI/ML Professional specializing in recommendation systems, personalization, and real-time ML pipelines.
+            </p>
+            <div class="flex space-x-6">
+                <a href="#work" class="bg-accent px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:opacity-90 transition">View Experience</a>
+                <a href="https://www.linkedin.com/in/sai-avena-sambidi-097401292" class="flex items-center space-x-2 text-sm font-bold uppercase tracking-widest border-b-2 border-white/10 hover:border-accent transition">
+                    <span>LinkedIn</span> <i class="fas fa-arrow-right text-xs"></i>
+                </a>
             </div>
         </div>
+        
+        <div class="relative hidden md:flex justify-center">
+            <div class="absolute top-10 right-20 w-32 h-32 border-2 border-accent rounded-full opacity-50 animate-pulse"></div>
+            <div class="absolute bottom-20 left-10 w-4 h-4 bg-blue-400 rounded-full"></div>
+            
+            <div class="w-full max-w-md aspect-[4/5] bg-neutral-900 rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition duration-700">
+                <div class="w-full h-full flex items-center justify-center text-neutral-800 text-9xl">
+                    <i class="fas fa-user-robot"></i>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="projects" class="py-24 px-6 bg-[#0d0d0f]">
+
+    <section id="work" class="py-32 px-8 md:px-20 bg-[#080808]">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-16 text-center">Neural & Knowledge Projects</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="group cursor-pointer">
-                    <div class="overflow-hidden rounded-xl mb-6 border border-white/10">
-                        <div class="h-64 bg-gradient-to-br from-orange-900/20 to-black flex items-center justify-center">
-                            <i class="fas fa-project-diagram text-5xl text-orange-500 group-hover:scale-110 transition duration-500"></i>
-                        </div>
+            <h3 class="text-accent uppercase tracking-[0.3em] text-sm font-bold mb-16">Expert On</h3>
+            
+            <div class="grid md:grid-cols-2 gap-20">
+                <div>
+                    <h4 class="text-4xl font-heading font-bold mb-8">Personalization & Scale</h4>
+                    <p class="text-gray-400 text-lg mb-12">
+                        Proven track record in deploying large-scale ML workflows using Spark Streaming and Azure ML, optimizing for both speed and engagement.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Azure ML</span>
+                        <span class="skill-tag">Spark Streaming</span>
+                        <span class="skill-tag">Databricks</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">Kubernetes</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">GraphRAG Knowledge Assistant</h3>
-                    <p class="text-gray-500 mb-4">Advanced knowledge retrieval via Graph-based LLM architectures.</p>
-                    <a href="https://github.com/SambidiReddy/graphrag-knowledge-assistant" class="text-orange-500 text-sm tracking-widest hover:underline">VIEW SOURCE →</a>
                 </div>
-                <div class="group cursor-pointer">
-                    <div class="overflow-hidden rounded-xl mb-6 border border-white/10">
-                        <div class="h-64 bg-gradient-to-br from-red-900/20 to-black flex items-center justify-center">
-                            <i class="fas fa-brain text-5xl text-red-500 group-hover:scale-110 transition duration-500"></i>
-                        </div>
+
+                <div class="space-y-12">
+                    <div class="border-l-2 border-accent pl-8">
+                        <span class="text-xs text-gray-500 uppercase font-bold">Asuitech Solutions</span>
+                        <h5 class="text-xl font-bold">ML Software Engineer</h5>
+                        <p class="text-sm text-gray-400 mt-2">30% Inference Speedup | 31% Prep Reduction</p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">GNN Fraud Detection</h3>
-                    <p class="text-gray-500 mb-4">Identifying transactional anomalies using Graph Neural Networks.</p>
-                    <a href="https://github.com/SambidiReddy/graph-neural-networks-fraud-detection" class="text-orange-500 text-sm tracking-widest hover:underline">VIEW SOURCE →</a>
+                    <div class="border-l-2 border-white/10 pl-8">
+                        <span class="text-xs text-gray-500 uppercase font-bold">MediaTech Consulting</span>
+                        <h5 class="text-xl font-bold">AI/ML Data Scientist</h5>
+                        <p class="text-sm text-gray-400 mt-2">28% Engagement Lift | 10M Daily Events</p>
+                    </div>
+                    <div class="border-l-2 border-white/10 pl-8">
+                        <span class="text-xs text-gray-500 uppercase font-bold">MediaTech Consulting</span>
+                        <h5 class="text-xl font-bold">ML Data Engineer</h5>
+                        <p class="text-sm text-gray-400 mt-2">40% Training Prep Reduction | Azure CI/CD</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer id="contact" class="py-20 px-6 text-center relative border-t border-white/5">
-        <h2 class="text-gradient text-4xl font-bold mb-8 italic">Dhanyavad</h2>
-        <div class="flex justify-center space-x-12 mb-12">
-            <a href="https://github.com/SambidiReddy" class="text-2xl hover:text-orange-500 transition"><i class="fab fa-github"></i></a>
-            <a href="#" class="text-2xl hover:text-orange-500 transition"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:your-email@example.com" class="text-2xl hover:text-orange-500 transition"><i class="fas fa-envelope"></i></a>
+
+    <section id="projects" class="py-32 px-8 md:px-20">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-end mb-20">
+                <h3 class="text-5xl font-heading font-bold">Featured<br>Neural Works</h3>
+                <a href="https://github.com/SambidiReddy" class="text-accent font-bold uppercase tracking-widest text-sm">View All Github →</a>
+            </div>
+
+            <div class="grid gap-4">
+                <a href="https://github.com/SambidiReddy/graphrag-knowledge-assistant" class="project-card py-10 flex flex-col md:flex-row md:items-center justify-between group">
+                    <div>
+                        <span class="text-xs text-accent font-bold uppercase">LLM Architecture</span>
+                        <h4 class="text-3xl font-heading font-medium mt-2">GraphRAG Knowledge Assistant</h4>
+                    </div>
+                    <i class="fas fa-arrow-right text-2xl opacity-0 group-hover:opacity-100 transition"></i>
+                </a>
+
+                <a href="https://github.com/SambidiReddy/graph-neural-networks-fraud-detection" class="project-card py-10 flex flex-col md:flex-row md:items-center justify-between group">
+                    <div>
+                        <span class="text-xs text-accent font-bold uppercase">GNN / Security</span>
+                        <h4 class="text-3xl font-heading font-medium mt-2">GNN Fraud Detection</h4>
+                    </div>
+                    <i class="fas fa-arrow-right text-2xl opacity-0 group-hover:opacity-100 transition"></i>
+                </a>
+
+                <div class="project-card py-10 flex flex-col md:flex-row md:items-center justify-between group">
+                    <div>
+                        <span class="text-xs text-accent font-bold uppercase">Recommendation Systems</span>
+                        <h4 class="text-3xl font-heading font-medium mt-2">Real-Time Game Engine</h4>
+                        <p class="text-gray-500 text-sm mt-2">19% Lift in player engagement via Spark & Azure.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-600">Sai Avena Reddy S &copy; 2026</p>
+    </section>
+
+    <footer class="py-20 px-8 border-t border-white/5 text-center">
+        <h2 class="text-5xl font-heading font-bold mb-12">Let's build the <span class="text-accent italic">future.</span></h2>
+        <div class="flex justify-center space-x-10 mb-12">
+            <a href="https://github.com/SambidiReddy" class="text-xl hover:text-accent transition"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/sai-avena-sambidi-097401292" class="text-xl hover:text-accent transition"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:your-email@example.com" class="text-xl hover:text-accent transition"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="text-[10px] uppercase tracking-[0.5em] text-gray-600">Sai Avena Reddy S &copy; 2026 • Based in Hyderabad / Remote</p>
     </footer>
+
 </body>
 </html>
